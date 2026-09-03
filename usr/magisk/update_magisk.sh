@@ -16,7 +16,7 @@ then
 	magisk_link="https://github.com/vvb2060/magisk_files/raw/${nver}/app-release.apk"
 else
 	if [ "x$1" = "x" ]; then
-		nver="$(curl -s https://github.com/topjohnwu/Magisk/releases | grep -m 1 -Poe 'Magisk v[\d\.]+' | cut -d ' ' -f 2)"
+		nver="$(curl -s https://github.com/topjohnwu/Magisk/releases | grep -Poe 'Magisk v[\d\.]+' | head -n 1 | cut -d ' ' -f 2)"
 	else
 		nver="$1"
 	fi
