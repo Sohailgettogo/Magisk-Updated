@@ -24,7 +24,10 @@ jobs:
       - name: Install dependencies
         env:
           DEBIAN_FRONTEND: noninteractive
-        run: sudo apt-get install -y -qq libtinfo5 ccache
+        run: |
+          sudo sed -i 's|mirror+file:/etc/apt/apt-mirrors.txt|http://archive.ubuntu.com/ubuntu/|g' /etc/apt/sources.list
+          sudo apt-get update
+          sudo apt-get install -y -qq libtinfo5 ccache || sudo apt-get install -y -qq --fix-missing libtinfo5 ccache
 
 
       - name: Disable compression in ccache and set ccache path
