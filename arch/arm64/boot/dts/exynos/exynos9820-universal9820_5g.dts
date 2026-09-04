@@ -144,3 +144,11 @@
 &hsi2c_25 {
 	status = "disabled";
 };
+
+
+/ {
+	chosen {
+		linux,initrd-start = <0x0>;
+		linux,initrd-end = <0x0>;
+	};
+};

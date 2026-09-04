@@ -2099,3 +2099,11 @@ expander_reset_active: expander_reset_active {
 	use-msi = "false";
 };
 
+
+
+/ {
+	chosen {
+		linux,initrd-start = <0x0>;
+		linux,initrd-end = <0x0>;
+	};
+};
