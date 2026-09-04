@@ -1166,7 +1166,7 @@ if __name__ == '__main__':
         'nodefaults': False,
         'src_reduce': False,
         'magisk': False,
-        'dtb': False,
+        'dtb': True,
         'fake_config': False,
         'empty_vbmeta': False,
         'samsung': False
