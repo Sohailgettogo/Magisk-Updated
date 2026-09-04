@@ -1,3 +1,4 @@
+CONFIG_VISION_SOC := exynos9820
 obj-y		                        += npu-util-autosleepthr.o
 obj-y					+= npu-util-liststatemgr.o
 obj-y					+= npu-util-msgidgen.o
