@@ -31,7 +31,7 @@ obj-$(CONFIG_FIRMWARE_SRAM_DUMP_DEBUGFS)	        += npu-util-memdump.o
 
 obj-y					+= generated/
 ifdef CONFIG_EXYNOS_SOC_NAME
-obj-y					+= soc/$(CONFIG_EXYNOS_SOC_NAME)/
+obj-y					+= soc/exynos9820/
 endif
 
 ccflags-y += -Idrivers/vision/include -Idrivers/vision/npu/include -Idrivers/vision/npu
@@ -42,4 +42,4 @@ ccflags-y += -Idrivers/vision/npu/interface/hardware
 endif
 
 # SoC specific inclusion
-ccflags-y += -Idrivers/vision/npu/soc/$(CONFIG_EXYNOS_SOC_NAME)/include
+ccflags-y += -Idrivers/vision/npu/soc/exynos9820/include
