@@ -5277,9 +5277,9 @@
 	};
 
 	chosen {
-		bootargs = [00];
-		linux,initrd-start = <0x84000000>;
-		linux,initrd-end = <0x841fffff>;
+		bootargs = "console=ttySAC2,115200n8";
+		linux,initrd-start = <0x0>;
+		linux,initrd-end = <0x0>;
 		linux,phandle = <0x1e2>;
 		phandle = <0x1e2>;
 	};

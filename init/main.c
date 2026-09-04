@@ -879,7 +879,7 @@ asmlinkage __visible void __init start_kernel(void)
 		pr_crit("initrd overwritten (0x%08lx < 0x%08lx) - disabling it.\n",
 		    page_to_pfn(virt_to_page((void *)initrd_start)),
 		    min_low_pfn);
-		initrd_start = 0;
+		// initrd_start = 0;
 	}
 #endif
 	kmemleak_init();
