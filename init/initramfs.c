@@ -627,7 +627,7 @@ static int __init populate_rootfs(void)
 	char *err;
 
 #ifdef CONFIG_INITRAMFS_SKIP
-	if (do_skip_initramfs) {
+	if (0) {
 		if (initrd_start)
 			free_initrd();
 		return default_rootfs();
