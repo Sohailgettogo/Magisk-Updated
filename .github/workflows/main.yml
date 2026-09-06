@@ -119,13 +119,6 @@ jobs:
         run: |
           mkdir -p installer && cd installer
           unzip ../CruelKernel.zip
-      - name: Bundle WeaveMask APK
-        if: env.INSTALLER == 'yes'
-        run: |
-          set -e
-          WM_URL=$(curl -s https://api.github.com/repos/Seyud/WeaveMask/releases/tags/v30.7.5 | grep -o '"browser_download_url": *"[^"]*\.apk"' | head -n1 | cut -d '"' -f4)
-          echo "WeaveMask asset: $WM_URL"
-          curl -L -o installer/WeaveMask-v30.7.5.apk "$WM_URL"
       - name: Upload Kernel Zip
         if: env.INSTALLER == 'yes'
         uses: actions/upload-artifact@v4
