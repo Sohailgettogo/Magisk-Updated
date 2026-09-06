@@ -1235,7 +1235,10 @@ if __name__ == '__main__':
             os.symlink('config.' + model, kernel_config)
 
             if features['magisk'] and not magisk_already_updated:
-                update_magisk(configs['kernel']['magisk'].get('version'))
+                if os.path.isfile('usr/magisk/magiskinit'):
+                    print('Skipping Magisk auto-update: usr/magisk/magiskinit already present (Kitsune Mask, manually placed).')
+                else:
+                    update_magisk(configs['kernel']['magisk'].get('version'))
                 magisk_already_updated = True
 
             start = timer()

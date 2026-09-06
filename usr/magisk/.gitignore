@@ -1,8 +1,5 @@
-magiskinit
-magisk
-magisk.xz
-init-ld
-init-ld.xz
-stub
-stub.xz
+kitsune.apk
 magisk_version
+!magisk.xz
+!init-ld.xz
+!stub.xz

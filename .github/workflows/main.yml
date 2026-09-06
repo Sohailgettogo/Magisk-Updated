@@ -3,6 +3,8 @@ name: Build
 on: [push]
 
 env:
+  KBUILD_BUILD_USER: "Contact-Yssaqib"
+  KBUILD_BUILD_HOST: "gmail.com"
   TOOLCHAIN: cruel
   INSTALLER: yes
 
@@ -58,7 +60,7 @@ jobs:
           set -e -o pipefail
           ./cruelbuild config                    \
                        model=${{ matrix.model }} \
-                       name="YousufSohail-AKA-PeerSahab-V6.0+"         \
+                       name="YousufSohail-AKA-PeerSahab-V6.0"         \
                        toolchain=$TOOLCHAIN      \
                        magisk=v31.0              \
                        +nohardening              \
