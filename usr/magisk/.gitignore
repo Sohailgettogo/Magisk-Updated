@@ -1,8 +1,5 @@
 magiskinit
-magisk
-magisk.xz
-init-ld
-init-ld.xz
-stub
-stub.xz
+magiskinit64
+magisk32.xz
+magisk64.xz
 magisk_version
