@@ -5,6 +5,9 @@ on: [push]
 env:
   KBUILD_BUILD_USER: "Contact-Yssaqib"
   KBUILD_BUILD_HOST: "gmail.com"
+  # LOCALVERSION must be set (even empty) so scripts/setlocalversion does not
+  # append the auto '+' suffix -> exact kernel release string, no trailing +
+  LOCALVERSION: ""
   TOOLCHAIN: cruel
   INSTALLER: yes
 
@@ -90,6 +93,16 @@ jobs:
 
       - name: Kernel Build
         run: ./cruelbuild :build
+
+      - name: Verify kernel version string
+        run: |
+          set -e
+          UTS=$(sed -n 's/^#define UTS_RELEASE "\(.*\)"$/\1/p' include/generated/utsrelease.h)
+          echo "Kernel release: $UTS"
+          if [ "$UTS" != "4.14.113-YousufSohail-AKA-PeerSahab-V6.0" ]; then
+            echo "ERROR: kernel version mismatch (expected: 4.14.113-YousufSohail-AKA-PeerSahab-V6.0)"
+            exit 1
+          fi
 
       - name: Install mkbootimg
         run: |
